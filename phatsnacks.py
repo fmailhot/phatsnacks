@@ -12,7 +12,7 @@ import requests
 # ====== Individual bot configuration ==========================
 bot_username = "phatsnacks1974"
 logfile_name = bot_username + ".log"
-logging.basicConfig(file=logfile_name, datefmt="%Y%m%d_%H%M",
+logging.basicConfig(filename=logfile_name, datefmt="%Y%m%d_%H%M",
                     level=logging.DEBUG)
 food2fork_url = "http://food2fork.com/api/search"
 # ==============================================================
@@ -26,10 +26,11 @@ def create_tweet(food_name):
     except Exception as e:
         return "No recipe found. #sadpanda"
     # fetch top-ranked recipe
-    recipe_json = r_json["recipes"][0]
-    recipe_f2f_url = recipe_json["f2f_url"]
+    recipe = r_json["recipes"][0]
+    recipe_f2f_url = recipe["f2f_url"]
     recipe_name = recipe["title"]
     recipe_publisher = recipe["publisher"]
+    recipe_img = recipe["image_url"]
     text = "\"%s\" by %s: %s" % (recipe_name, recipe_publisher, recipe_f2f_url)
     return text
 
@@ -53,6 +54,6 @@ def tweet(text):
 if __name__ == "__main__":
     food_name = raw_input("Enter a food/ingredient: ")
     tweet_text = create_tweet(food_name)
-#    tweet(tweet_text)
-    print tweet_text
+    tweet(tweet_text)
+#    print tweet_text
 
