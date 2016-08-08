@@ -1,0 +1,6 @@
+{
+  "name": "PhatSnacks",
+  "tagline": "A Twitter bot; tweet it a food, it'll reply with a recipe.",
+  "body": "### Welcome to PhatSnacks.\r\nIt's a bot: tweet a food at it, it'll reply with a recipe.\r\n\r\nThis is my first crack at writing a Twitter bot. Just scratching an itch for the moment, to grok how all this works (I hope I'm keeping this simple enough to start with).\r\n\r\n### Authors and Contributors\r\n@fmailhot\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
